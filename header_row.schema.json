@@ -4,7 +4,7 @@
   "title": "Header row",
   "description": "A header row in a table, containing column info",
   "type": "object",
-  "required": [],
+  "required": ["columns"],
   "properties": {
     "columns": {
       "description": "Row columns",
