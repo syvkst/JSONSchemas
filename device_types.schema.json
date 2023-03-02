@@ -15,7 +15,10 @@
       },
       "name": {
         "description": "Name of this device type, localized",
-        "$ref": "./localized_string.schema.json"
+        "type": "array",
+        "items": {
+          "$ref": "./localized_string.schema.json"
+        }
       },
       "models": {
         "type": "array",
