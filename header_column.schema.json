@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "/src/Schemas/column.schema.json",
-  "title": "Table column",
-  "description": "A column in a datatable",
+  "$id": "/src/Schemas/header_column.schema.json",
+  "title": "Table column header",
+  "description": "A column header in a datatable",
   "type": "object",
   "required": ["id", "name"],
   "properties": {
     "id": {
-      "description": "Database id for an entry.",
+      "description": "Id for this header.",
       "type": "string"
     },
     "name": {
-      "description": "Display name for this column in a localized form.",
+      "description": "Display name for this column header in a localized form.",
       "type": "array",
       "items": {
         "$ref": "./localized_string.schema.json"
@@ -22,7 +22,7 @@
       "type": "boolean"
     },
     "align": {
-      "description": "The alignment of the column name inside its area. Default is left.",
+      "description": "The alignment of the column items. Default is left.",
       "type": "string",
       "enum": ["center", "inherit", "justify", "left", "right"]
     },

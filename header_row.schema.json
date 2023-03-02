@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/header_row.schema.json",
+  "title": "Header row",
+  "description": "A header row in a table, containing column info",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "columns": {
+      "description": "Row columns",
+      "type": "array",
+      "items": {
+        "ref": "./header_column.schema.json"
+      }
+    }
+  }
+}
