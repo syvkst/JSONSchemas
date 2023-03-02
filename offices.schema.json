@@ -11,7 +11,7 @@
     "properties": {
       "id": {
         "description": "Unique id for the office",
-        "anyOf": [{ "type": "string" }, { "type": "number" }]
+        "type": "number"
       },
       "name": {
         "description": "Name of the office, localized",
