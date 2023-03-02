@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/syvkst/JSONSchemas/master/row_data.schema.json",
+  "title": "Row data",
+  "description": "Data of a row in a database",
+  "type": "object",
+  "required": ["label", "data"],
+  "properties": {
+    "label": {
+      "description": "Label for this data shown on the table",
+      "type": "string"
+    },
+    "stopPropagation": {
+      "description": "If true, do not propagate event through the table",
+      "type": "boolean"
+    },
+    "data": {
+      "description": "Actual data, of any type"
+    }
+  }
+}

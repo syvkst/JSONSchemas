@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/syvkst/JSONSchemas/master/devices.schema.json",
+  "title": "Device",
+  "description": "Entries for devices",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "serialNumber",
+      "region",
+      "office",
+      "user",
+      "deviceType",
+      "deviceModel"
+    ],
+    "properties": {
+      "id": {
+        "type": "number",
+        "description": "Unique id"
+      },
+      "serialNumber": {
+        "type": "string",
+        "description": "Serial number of the device"
+      },
+      "region": {
+        "type": "number",
+        "description": "Region of this device"
+      },
+      "office": {
+        "type": "number",
+        "description": "Office of this device"
+      },
+      "user": {
+        "type": "number",
+        "description": "User of this device"
+      },
+      "description": {
+        "type": "string",
+        "description": "Additional description for this device"
+      },
+      "deviceType": {
+        "type": "number",
+        "description": "Type of the device (e.g. computer)"
+      },
+      "deviceModel": {
+        "type": "number",
+        "description": "Device model"
+      }
+    }
+  }
+}

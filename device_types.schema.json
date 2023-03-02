@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/syvkst/JSONSchemas/master/device_types.schema.json",
+  "title": "Device types",
+  "description": "Types of devices (e.g. computer)",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "description": "A type of devices",
+    "required": ["id", "name", "models"],
+    "properties": {
+      "id": {
+        "type": "number",
+        "description": "Unique id for this type"
+      },
+      "name": {
+        "description": "Name of this device type, localized",
+        "$ref": "./localized_string.schema.json"
+      },
+      "models": {
+        "type": "array",
+        "description": "Models of this device",
+        "minItems": 1,
+        "items": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

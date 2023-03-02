@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/syvkst/JSONSchemas/master/regions.schema.json",
+  "title": "Region",
+  "description": "Regions containing offices",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["id", "name"],
+    "properties": {
+      "id": {
+        "description": "Unique id for this region",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name for this region, localized",
+        "type": "array",
+        "items": {
+          "$ref": "./localized_string.schema.json"
+        }
+      },
+      "offices": {
+        "description": "Offices in this region",
+        "type": "array",
+        "items": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
