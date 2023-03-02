@@ -12,7 +12,10 @@
     },
     "name": {
       "description": "Name for this region, localized",
-      "$ref": "./localized_string.schema.json"
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
     },
     "offices": {
       "description": "Offices in this region",

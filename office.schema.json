@@ -12,7 +12,10 @@
     },
     "name": {
       "description": "Name of the office, localized",
-      "$ref": "./localized_string.schema.json"
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
     },
     "users": {
       "description": "Users for this office",
