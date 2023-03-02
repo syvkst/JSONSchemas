@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/section.schema.json",
+  "title": "Section",
+  "description": "A section of the site containing pages",
+  "type": "object",
+  "required": ["name", "pages"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of this section (displayed to the user)"
+    },
+    "pages": {
+      "description": "Pages contained in this section",
+      "type": "array",
+      "items": {
+        "$ref": "./page.schema.json"
+      },
+      "minItems": 1
+    },
+    "icon": {
+      "description": "MUI Icon for this section, shown if defined",
+      "type": "string"
+    }
+  }
+}

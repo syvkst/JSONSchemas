@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/form.schema.json",
+  "title": "Form",
+  "description": "A form to display to the user.",
+  "type": "object",
+  "required": ["categories", "sections"],
+  "properties": {
+    "categories": {
+      "description": "Categories this form belongs to",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["Ilmoitukset", "Kyberturvallisuus"]
+      },
+      "uniqueItems": true
+    },
+    "formTitle": {
+      "description": "Optional title for the form with localized strings",
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "buttonLabel": {
+      "description": "Optional label for the submit button as a localized string",
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "sections": {
+      "description": "Sections displayed in the form",
+      "type": "array",
+      "items": {
+        "$ref": "./form_section.schema.json"
+      },
+      "minItems": 1
+    },
+    "width": {
+      "description": "Width of this form",
+      "type": "string"
+    }
+  }
+}

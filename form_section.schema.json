@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/form_section.schema.json",
+  "title": "Form section",
+  "description": "A section displayed in the form",
+  "type": "object",
+  "required": ["fields"],
+  "properties": {
+    "title": {
+      "description": "Optional title for this section",
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "fields": {
+      "description": "All the fields in this section",
+      "type": "array",
+      "items": {
+        "$ref": "./form_field.schema.json"
+      },
+      "minItems": 1
+    }
+  }
+}

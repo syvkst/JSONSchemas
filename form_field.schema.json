@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/form_field.schema.json",
+  "title": "Form field",
+  "description": "Field displayed in the form",
+  "type": "object",
+  "required": ["type", "name", "label", "value", "validations", "params"],
+  "properties": {
+    "type": {
+      "description": "Type of the field (text, select, switch etc.)",
+      "type": "string",
+      "enum": ["text", "select", "switch"]
+    },
+    "name": {
+      "description": "Name for the field. Must be unique and will not be shown to the user.",
+      "type": "string"
+    },
+    "label": {
+      "description": "Label shown to the user",
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "value": {
+      "description": "Default value for this field",
+      "anyOf": [
+        { "$ref": "./localized_string.schema.json" },
+        { "type": "string" },
+        { "type": "number" },
+        { "type": "boolean" }
+      ]
+    },
+    "description": {
+      "description": "A short description shown under the field",
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "info": {
+      "description": "Info text shown above the field when opened, divided into paragraphs",
+      "type": "array",
+      "items": {
+        "description": "Paragraph in a localized string",
+        "type": "array",
+        "items": {
+          "$ref": "./localized_string.schema.json"
+        }
+      }
+    },
+    "infoTitle": {
+      "description": "Title for the info box",
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "visibilityController": {
+      "description": "Field that controls this fields visibility",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the controlling field",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type of the primary field value",
+          "type": "string",
+          "enum": ["boolean", "string"]
+        },
+        "visibleStringValues": {
+          "description": "Values that make this field visible",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "if": {
+        "properties": { "type": { "const": "string" } }
+      },
+      "then": {
+        "required": ["name", "type", "visibleStringValues"]
+      },
+      "else": {
+        "required": ["name", "type"]
+      }
+    },
+    "validations": {
+      "description": "Yup validation rules for this field (e.g. 'string', 'required')",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "params": {
+      "description": "Messages for validation according to validation rules (e.g. 'required': 'Field is required')",
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "array",
+          "items": {
+            "$ref": "./localized_string.schema.json"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "additional": {
+      "description": "Any additional properties for this field",
+      "type": "object"
+    }
+  }
+}

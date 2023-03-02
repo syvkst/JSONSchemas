@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/page.schema.json",
+  "title": "Page",
+  "description": "A page in a site section",
+  "type": "object",
+  "required": ["name", "identifier"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the page displayed to the user"
+    },
+    "identifier": {
+      "type": "string",
+      "description": "A string to identify this page (used e.g. as a slug)"
+    }
+  }
+}

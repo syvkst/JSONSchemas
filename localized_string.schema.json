@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/localized-string.schema.json",
+  "title": "Localized string",
+  "description": "A representation of language and it's localized content",
+  "required": ["language", "content"],
+  "type": "object",
+  "properties": {
+    "language": {
+      "type": "string",
+      "description": "Languge code for this string version"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contents of this localized string"
+    }
+  }
+}
