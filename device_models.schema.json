@@ -4,10 +4,8 @@
   "title": "Device models",
   "description": "Models of devices",
   "type": "array",
-  "minItems": 1,
   "items": {
     "type": "object",
-    "description": "Device model (e.g. R2-D2)",
     "required": ["id", "name"],
     "properties": {
       "id": {
