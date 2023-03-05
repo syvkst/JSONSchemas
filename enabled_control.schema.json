@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/enabled_control.schema.json",
+  "title": "Enabled control",
+  "description": "Enabled status control for a field",
+  "type": "object",
+  "required": ["controllers", "effect", "condition"],
+  "properties": {
+    "controllers": {
+      "type": "array",
+      "description": "Fields that control the enabled status of this field",
+      "items": {
+        "$ref": "./enabled_controller.schema.json"
+      }
+    },
+    "effect": {
+      "type": "string",
+      "description": "Effects of controllers when evaluating condition",
+      "enum": ["enables", "disables"]
+    },
+    "condition": {
+      "description": "Condition for evaluating controllers",
+      "oneOf": [
+        { "type": "string", "enum": ["allTrue", "oneTrue"] },
+        {
+          "type": "number",
+          "description": "Number of controllers that must be true"
+        }
+      ]
+    }
+  }
+}

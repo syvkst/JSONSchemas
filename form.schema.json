@@ -40,6 +40,10 @@
     "width": {
       "description": "Width of this form",
       "type": "string"
+    },
+    "hasButton": {
+      "type": "boolean",
+      "description": "If true, a submit button will be shown"
     }
   }
 }

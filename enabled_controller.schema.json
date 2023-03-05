@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/enabled_controller.schema.json",
+  "title": "Enabled controller",
+  "description": "A field that controls the enabled status of associated object",
+  "type": "object",
+  "required": ["fieldName", "effectType", "triggerValues"],
+  "properties": {
+    "fieldName": {
+      "type": "string",
+      "description": "Name of the associated field"
+    },
+    "effectType": {
+      "type": "string",
+      "description": "If conditions are true, this is the effect",
+      "enum": ["enables", "disables"]
+    },
+    "triggerValues": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Values of which one must match to cause the effect"
+    }
+  }
+}

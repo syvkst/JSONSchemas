@@ -87,6 +87,9 @@
         "required": ["name", "type"]
       }
     },
+    "enabledControl": {
+      "$ref": "./enabled_control.schema.json"
+    },
     "validations": {
       "description": "Yup validation rules for this field (e.g. 'string', 'required')",
       "type": "array",
