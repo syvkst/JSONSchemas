@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "/src/Schemas/header_column.schema.json",
-  "title": "Table column header",
-  "description": "A column header in a datatable",
+  "$id": "/src/Schemas/data_form.schema.json",
+  "title": "Data form",
+  "description": "A form to display data in",
   "type": "object",
   "required": ["id", "name"],
   "properties": {
@@ -37,6 +37,10 @@
     "sortOnDataPropertyName": {
       "description": "If defined, sort items based on a given property (rather than their name).",
       "type": "string"
+    },
+    "edit": {
+      "description": "Edit form settings. If not set, will not be editable.",
+      "$ref": "./form_field.schema.json"
     }
   }
 }

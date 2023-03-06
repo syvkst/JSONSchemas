@@ -16,7 +16,7 @@
       "type": "string"
     },
     "label": {
-      "description": "Label shown to the user",
+      "description": "Default label shown to the user",
       "type": "array",
       "items": {
         "$ref": "./localized_string.schema.json"

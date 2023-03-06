@@ -10,7 +10,7 @@
       "description": "Row columns",
       "type": "array",
       "items": {
-        "$ref": "./header_column.schema.json"
+        "$ref": "./data_form.schema.json"
       }
     }
   }
