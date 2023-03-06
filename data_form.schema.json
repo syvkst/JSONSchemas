@@ -39,8 +39,18 @@
       "type": "string"
     },
     "edit": {
-      "description": "Edit form settings. If not set, will not be editable.",
-      "$ref": "./form_field.schema.json"
+      "type": "object",
+      "description": "If defined, this field is editable",
+      "required": ["editOrder", "form"],
+      "properties": {
+        "editOrder": {
+          "type": "number",
+          "description": "Order of the field in edit dialog"
+        },
+        "form": {
+          "$ref": "./form_field.schema.json"
+        }
+      }
     }
   }
 }
