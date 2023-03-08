@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/data_edit_switch.schema.json",
+  "title": "Data edit text",
+  "description": "Edit properties for data property with text input",
+  "type": "object",
+  "properties": {
+    "description": {
+      "description": "Description shown under the text input",
+      "$ref": "./localized_string.schema.json"
+    },
+    "info": {
+      "description": "Info lines shown, when info is opened",
+      "type": "array",
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "infoTitle": {
+      "description": "Title shown on the info box when opened",
+      "$ref": "./localized_string.schema.json"
+    },
+    "visibleConditions": {
+      "description": "Conditions for the visibility of this field",
+      "$ref": "./data_edit_conditions.schema.json"
+    },
+    "enabledConditions": {
+      "description": "Conditions for the enabled state of this field",
+      "$ref": "./data_edit_conditions.schema.json"
+    }
+  }
+}

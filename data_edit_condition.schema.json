@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/data_edit_condition.schema.json",
+  "description": "Condition for visibility or enabled state of a field",
+  "title": "Data edit condition",
+  "type": "object",
+  "required": ["property", "trueIf", "conditions"],
+  "properties": {
+    "property": {
+      "type": "string",
+      "description": "Name of the property to evaluate"
+    },
+    "trueIf": {
+      "description": "This condition will turn true if this applies",
+      "type": "string",
+      "enum": ["oneMatch", "noMatch"]
+    },
+    "conditions": {
+      "description": "Condition values for this condition",
+      "type": "array",
+      "items": {
+        "description": "Possible values of the named property"
+      }
+    }
+  }
+}
