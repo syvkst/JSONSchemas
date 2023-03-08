@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/data_display_property.schema.json",
+  "title": "Data display property",
+  "description": "Display form of data property",
+  "type": "object",
+  "required": ["value", "label"],
+  "properties": {
+    "value": {
+      "description": "Property value"
+    },
+    "label": {
+      "description": "Label for this property",
+      "$ref": "./localized_string.schema.json"
+    },
+    "enableSort": {
+      "type": "boolean",
+      "description": "If true, this property can be sorted in the table (default false)"
+    },
+    "align": {
+      "type": "string",
+      "description": "Where to align the label within the column (default is left)",
+      "enum": ["center", "inherit", "justify", "left", "right"]
+    },
+    "hidden": {
+      "type": "boolean",
+      "description": "If true, this property will not be shown as a column (but can be edited, if edit is set)"
+    },
+    "renderer": {
+      "description": "The JSX element to render this property on the column"
+    },
+    "edit": {
+      "description": "If set, this data property is editable",
+      "oneOf": [
+        { "$ref": "./data_edit_text.schema.json" },
+        { "$ref": "./data_edit_switch.schema.json" },
+        { "$ref": "./data_edit_select.schema.json" }
+      ]
+    }
+  }
+}
