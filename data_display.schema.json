@@ -3,8 +3,11 @@
   "$id": "/src/Schemas/data_display.schema.json",
   "title": "Data display definition",
   "description": "Defining the display properties of data",
-  "type": "array",
-  "items": {
-    "$ref": "./data_display_property.schema.json"
-  }
+  "type": "object",
+  "patternProperties": {
+    "^.*$": {
+      "$ref": "./data_display_property.schema.json"
+    }
+  },
+  "additionalProperties": false
 }

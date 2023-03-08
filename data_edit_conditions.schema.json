@@ -3,8 +3,11 @@
   "$id": "/src/Schemas/data_edit_conditions.schema.json",
   "description": "Visibility or enabled conditions",
   "title": "Conditions for property",
-  "type": "array",
-  "items": {
-    "$ref": "./data_edit_condition"
-  }
+  "type": "object",
+  "patternProperties": {
+    "^.*$": {
+      "$ref": "./data_edit_condition.schema.json"
+    }
+  },
+  "additionalProperties": false
 }
