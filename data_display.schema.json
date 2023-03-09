@@ -7,7 +7,8 @@
   "patternProperties": {
     "^.*$": {
       "$ref": "./data_display_property.schema.json"
-    }
+    },
+    "additionalProperties": false
   },
   "additionalProperties": false
 }
