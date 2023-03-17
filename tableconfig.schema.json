@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/tableconfig.schema.json",
+  "title": "Table configuration",
+  "description": "Table configuration for data display",
+  "type": "object",
+  "properties": {
+    "title": {
+      "description": "Title for the table, localized.",
+      "$ref": "./localized_string.schema.json"
+    },
+    "selectType": {
+      "type": "string",
+      "enum": ["none", "single", "multiple"],
+      "description": "Selection type for the table. Default is 'none'."
+    },
+    "selectOnClick": {
+      "type": "boolean",
+      "description": "If set to true, rows will be selected when clicked (vs. selection by checkbox)."
+    },
+    "selectedValueProp": {
+      "type": "string",
+      "description": "If set, this property is used when displaying info on selection information bar."
+    },
+    "allowEdit": {
+      "type": "boolean",
+      "description": "If set to true, entries are editable."
+    },
+    "allowCreate": {
+      "type": "boolean",
+      "description": "If set to true, new entries can be created."
+    }
+  }
+}

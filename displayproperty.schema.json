@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/displayproperty.schema.json",
+  "title": "Display property",
+  "description": "Display configuration for a particular property",
+  "required": ["title"],
+  "properties": {
+    "title": {
+      "description": "Title to show for this property in the headers section, localized",
+      "$ref": "./localized_string.schema.json"
+    },
+    "labelProperty": {
+      "type": "string",
+      "description": "Key for as property inside this property to use for showing data value (may be nested, e.g. 'name.first'). If not specified, value of this property is assumed to be primitive. In case this is not specified and value is not primitive, label for 'no value' is displayed."
+    },
+    "enableSort": {
+      "type": "boolean",
+      "description": "If set to true, data is sortable by this property."
+    },
+    "align": {
+      "type": "string",
+      "enum": ["center", "inherit", "justify", "left", "right"],
+      "description": "Where to align the text on the column header (default is 'inherit')."
+    },
+    "hidden": {
+      "type": "boolean",
+      "description": "If set to true, data for this property will not show on the table (but might be editable, is set so)"
+    },
+    "stopPropagation": {
+      "type": "boolean",
+      "description": "If set to true, clicking this property on the table will not propagate the click event up the tree. Mainly used in combination with a custom renderer. If you are unsure, leave this as is."
+    }
+  }
+}

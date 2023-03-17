@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/displayconfig.schema.json",
+  "title": "Display Configuration",
+  "description": "Display configuration for data",
+  "type": "object",
+  "required": ["props"],
+  "properties": {
+    "props": {
+      "type": "object",
+      "description": "Properties of the data model to display on the table.",
+      "patternProperties": {
+        "^.*$": {
+          "$ref": "./displayproperty.schema.json"
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "description": "Configuration for the table. Optional.",
+      "$ref": "./tableconfig.schema.json"
+    }
+  }
+}
