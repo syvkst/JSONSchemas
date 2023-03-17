@@ -7,7 +7,11 @@
   "properties": {
     "title": {
       "description": "Title to show for this property in the headers section, localized",
-      "$ref": "./localized_string.schema.json"
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
     },
     "labelProperty": {
       "type": "string",
