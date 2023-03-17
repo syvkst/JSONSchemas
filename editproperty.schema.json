@@ -66,6 +66,18 @@
       "items": {
         "$ref": "./validationrule.schema.json"
       }
+    },
+    "multiline": {
+      "type": "boolean",
+      "description": "If this property field is text field and set to true, field will be multiline."
+    },
+    "optionLabelProp": {
+      "type": "string",
+      "description": "Key to look for inside a property value. Used for labeling items in a select field."
+    },
+    "options": {
+      "type": "array",
+      "description": "Options for select field. If not set here, will have to be set programmatically."
     }
   }
 }

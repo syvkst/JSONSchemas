@@ -11,11 +11,7 @@
       "description": "Configurations for individual properties.",
       "patternProperties": {
         "^.*$": {
-          "anyOf": [
-            { "$ref": "./textfield.schema.json" },
-            { "$ref": "./switchfield.schema.json" },
-            { "$ref": "./selectfield.schema.json" }
-          ]
+          "$ref": "./editproperty.schema.json"
         },
         "additionalProperties": false
       },
