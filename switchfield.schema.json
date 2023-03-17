@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/switchfield.schema.json",
+  "title": "Switch field",
+  "description": "Property is editable with a switch (a boolean value).",
+  "$ref": "./editproperty.schema.json"
+}
