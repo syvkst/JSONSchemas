@@ -3,7 +3,9 @@
   "$id": "/src/Schemas/selectfield.schema.json",
   "title": "Select field",
   "description": "Property is editable with a select field",
-  "$ref": "./editproperty.schema.json",
+  "additionalProperties": {
+    "$ref": "./editproperty.schema.json"
+  },
   "properties": {
     "options": {
       "type": "array",
