@@ -8,6 +8,7 @@
   "properties": {
     "language": {
       "type": "string",
+      "enum": ["fi", "sv", "en"],
       "description": "Languge code for this string version"
     },
     "content": {
