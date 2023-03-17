@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/conditionproperty.schema.json",
+  "title": "Condition property",
+  "description": "Condition for enabled or visible state of another property",
+  "type": "object",
+  "required": ["trueIf", "conditions"],
+  "properties": {
+    "trueIf": {
+      "type": "string",
+      "description": "When is this condition true?",
+      "enum": ["oneMatch", "noMatch"]
+    },
+    "conditions": {
+      "type": "array",
+      "description": "Conditions to match the comparison value to.",
+      "minItems": 1
+    }
+  }
+}

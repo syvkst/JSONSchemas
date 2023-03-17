@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/editconfig.schema.json",
+  "title": "Edit configuration",
+  "type": "object",
+  "required": ["props", "form"],
+  "description": "Edit configuration of a model.",
+  "properties": {
+    "props": {
+      "type": "object",
+      "description": "Configurations for individual properties.",
+      "patternProperties": {
+        "^.*$": {
+          "$ref": "./editproperty.schema.json"
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false
+    },
+    "form": {
+      "$ref": "./formconfig.schema.json"
+    }
+  }
+}

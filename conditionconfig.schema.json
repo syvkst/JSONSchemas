@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/conditionconfig.schema.json",
+  "title": "Condition configuration",
+  "description": "Configuration for conditions of a particular property",
+  "type": "object",
+  "required": ["evaluation", "conditions"],
+  "properties": {
+    "evaluation": {
+      "type": ["string"],
+      "enum": ["and", "or"],
+      "description": "Do all conditions need to be true or just one?"
+    },
+    "conditions": {
+      "type": "object",
+      "description": "Conditions for this property. Keys are references to other properties.",
+      "patternProperties": {
+        "^.*$": {
+          "$ref": "./conditionproperty.schema.json"
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false
+    }
+  }
+}

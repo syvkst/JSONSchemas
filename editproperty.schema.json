@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/editproperty.schema.json",
+  "title": "Edit property",
+  "description": "Edit configuration for a particular property.",
+  "type": "object",
+  "required": ["type"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of the edit field for this property.",
+      "enum": ["text", "switch", "select"]
+    },
+    "title": {
+      "description": "Title for this property when editing, localized. Default is name of the property capitalized.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "description": {
+      "description": "A short description shown under the edit field.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "infoContent": {
+      "description": "Content of the info-box. If this or infoTitle has not been set, no info will be available. This is an array, where each entry represents a paragraph in the info-box. All paragraphs are localized.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "./localized_string.schema.json"
+        }
+      }
+    },
+    "infoTitle": {
+      "description": "Title for the info-box. See description for infoContent.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./localized_string.schema.json"
+      }
+    },
+    "width": {
+      "type": "string",
+      "description": "Width of this field in the form (as css definition, e.g. '100px' or '20%')."
+    },
+    "visibleConditions": {
+      "description": "Conditions for the visibility of this item.",
+      "$ref": "./conditionconfig.schema.json"
+    },
+    "enabledConditions": {
+      "description": "Conditions for the enabled state of this item.",
+      "$ref": "./conditionconfig.schema.json"
+    },
+    "validationRules": {
+      "description": "Rules for the validation of this item.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./validationrule.schema.json"
+      }
+    }
+  }
+}

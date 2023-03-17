@@ -33,6 +33,10 @@
     "allowCreate": {
       "type": "boolean",
       "description": "If set to true, new entries can be created."
+    },
+    "allowDelete": {
+      "type": "boolean",
+      "description": "If set to true, entries can be deleted."
     }
   }
 }
