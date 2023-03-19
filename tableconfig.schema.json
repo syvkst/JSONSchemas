@@ -25,18 +25,6 @@
     "selectedValueProp": {
       "type": "string",
       "description": "If set, this property is used when displaying info on selection information bar."
-    },
-    "allowEdit": {
-      "type": "boolean",
-      "description": "If set to true, entries are editable."
-    },
-    "allowCreate": {
-      "type": "boolean",
-      "description": "If set to true, new entries can be created."
-    },
-    "allowDelete": {
-      "type": "boolean",
-      "description": "If set to true, entries can be deleted."
     }
   }
 }

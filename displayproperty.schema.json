@@ -3,20 +3,7 @@
   "$id": "/src/Schemas/displayproperty.schema.json",
   "title": "Display property",
   "description": "Display configuration for a particular property",
-  "required": ["title"],
   "properties": {
-    "title": {
-      "description": "Title to show for this property in the headers section, localized",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "$ref": "./localized_string.schema.json"
-      }
-    },
-    "labelProperty": {
-      "type": "string",
-      "description": "Key for as property inside this property to use for showing data value (may be nested, e.g. 'name.first'). If not specified, value of this property is assumed to be primitive. In case this is not specified and value is not primitive, label for 'no value' is displayed."
-    },
     "enableSort": {
       "type": "boolean",
       "description": "If set to true, data is sortable by this property."

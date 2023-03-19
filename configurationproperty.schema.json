@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "/src/Schemas/configurationproperty.schema.json",
+  "title": "Configuration property",
+  "description": "Configurations for a particular property of a model.",
+  "type": "object",
+  "properties": {
+    "initialValue": {
+      "description": "Provide an intial value for a property, if no model is passed to a form. In case no model is provided, a pseudo-model will be built from these values."
+    },
+    "title": {
+      "description": "Title used for this property in various places. If no title is provided, the name of this property will be used as the title (with a capitalized first letter).",
+      "$ref": "./localized_string.schema.json"
+    },
+    "labelKey": {
+      "type": "string",
+      "description": "If this value is provided, it will be used to label this property in various places. It will also be used as a label for options in case this property is presented as a select field. Any sub-property name of this property (also accepts nested properties, e.g. 'name.lastName'). If no value is provided, the value of this property will be used as is. Do not provide a label key for properties, whose values are primitive."
+    },
+    "display": {
+      "description": "Display configuration for this property. If no value is provided, a set of minimal default values will be generated.",
+      "$ref": "./displayproperty.schema.json"
+    },
+    "edit": {
+      "description": "Edit configuration for this property. If no value is provided, a set of minimal default values will be generated.",
+      "$ref": "./editproperty.schema.json"
+    }
+  }
+}

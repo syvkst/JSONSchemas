@@ -4,21 +4,7 @@
   "title": "Edit property",
   "description": "Edit configuration for a particular property.",
   "type": "object",
-  "required": ["type"],
   "properties": {
-    "type": {
-      "type": "string",
-      "description": "Type of the edit field for this property.",
-      "enum": ["text", "switch", "select"]
-    },
-    "title": {
-      "description": "Title for this property when editing, localized. Default is name of the property capitalized.",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "$ref": "./localized_string.schema.json"
-      }
-    },
     "description": {
       "description": "A short description shown under the edit field.",
       "type": "array",
@@ -70,10 +56,6 @@
     "multiline": {
       "type": "boolean",
       "description": "If this property field is text field and set to true, field will be multiline."
-    },
-    "optionLabelProp": {
-      "type": "string",
-      "description": "Key to look for inside a property value. Used for labeling items in a select field."
     },
     "options": {
       "type": "array",

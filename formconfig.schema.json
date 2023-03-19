@@ -4,7 +4,6 @@
   "title": "Form configuration",
   "description": "Configuration for the edit form.",
   "type": "object",
-  "required": ["sections"],
   "properties": {
     "categories": {
       "type": "array",
