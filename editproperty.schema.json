@@ -60,6 +60,10 @@
     "options": {
       "type": "array",
       "description": "Options for select field. If not set here, will have to be set programmatically."
+    },
+    "required": {
+      "type": "boolean",
+      "description": "If set to true, this property is required when editing. If 'required' validation rule is set, this default option will be overridden."
     }
   }
 }
