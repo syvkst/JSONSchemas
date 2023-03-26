@@ -5,6 +5,17 @@
   "description": "Edit configuration for a particular property.",
   "type": "object",
   "properties": {
+    "type": {
+      "description": "Type of this edit property as a field.",
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": ["text", "switch", "date", "time", "dateTime"]
+        },
+        { "$ref": "./selecttypeprops.schema.json" },
+        { "$ref": "./texttypeprops.schema.json" }
+      ]
+    },
     "description": {
       "description": "A short description shown under the edit field.",
       "type": "array",
@@ -53,17 +64,13 @@
         "$ref": "./validationrule.schema.json"
       }
     },
-    "multiline": {
-      "type": "boolean",
-      "description": "If this property field is text field and set to true, field will be multiline."
-    },
-    "options": {
-      "type": "array",
-      "description": "Options for select field. If not set here, will have to be set programmatically."
-    },
     "required": {
       "type": "boolean",
       "description": "If set to true, this property is required when editing. If 'required' validation rule is set, this default option will be overridden."
+    },
+    "inline": {
+      "type": "boolean",
+      "description": "If set to true, this element will be displayed inline."
     }
   }
 }
