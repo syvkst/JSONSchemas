@@ -7,14 +7,8 @@
   "properties": {
     "type": {
       "description": "Type of this edit property as a field.",
-      "oneOf": [
-        {
-          "type": "string",
-          "enum": ["text", "switch", "date", "time", "dateTime"]
-        },
-        { "$ref": "./selecttypeprops.schema.json" },
-        { "$ref": "./texttypeprops.schema.json" }
-      ]
+      "type": "string",
+      "enum": ["text", "switch", "date", "time", "dateTime", "select"]
     },
     "description": {
       "description": "A short description shown under the edit field.",
@@ -71,6 +65,14 @@
     "inline": {
       "type": "boolean",
       "description": "If set to true, this element will be displayed inline."
+    },
+    "options": {
+      "type": "array",
+      "description": "Options for a select field."
+    },
+    "multiline": {
+      "type": "boolean",
+      "description": "If true, text field will be multiline."
     }
   }
 }
